@@ -392,7 +392,7 @@ person.info$name
 person.info[ person.info$name == "Hong", ]
 person.info[ person.info$name == "Hong", c( "name", "age" ) ]
 
-data()
+#data()
 
 iris
 iris[ , c( 1:2 ) ]
@@ -481,3 +481,16 @@ attach( st )
 Population
 detach( st )
 Population
+
+
+#### csv file 내용 읽기 ####
+setwd( "D:/workR" ) # 현재 폴더이면 안해도 됨
+air <- read.csv( "person.csv", header = T )
+
+class( air )
+dim( air )
+str( air )
+head( air )
+tail( air )
+
+
