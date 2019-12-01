@@ -100,12 +100,11 @@ tmp2 <- subset( st, Illiteracy < 2.0 )
 avg_tmp2 <- apply( tmp2, 2, mean )[ "Income" ]
 abs( avg_tmp - avg_tmp2 )
 
-# 20. 기대수명(Life Exp)이 가장 높은 주는 어디인지 출력 #################
+# 20. 기대수명(Life Exp)이 가장 높은 주는 어디인지 출력
 rownames( subset( st, Life.Exp == max( st[ , "Life.Exp" ] ) ) )
 
 # 21 Pennsylvania 주보다 수입(Income)이 높은 주들 출력
 penIncome <- st[ "Pennsylvania", "Income" ]
-penIncome
 rownames( subset( st, Income > penIncome ) )
 
 # 
@@ -113,23 +112,36 @@ rownames( subset( st, Income > penIncome ) )
 # R에서 제공하는 mtcars 데이터셋은 자동차 모델에 대한 제원 정보를 담고 있다.
 # 
 # 1. 이 데이터셋의 자료구조 출력
-class( mtcars )
+str( mtcars )
 
 # 2. 이 데이터셋의 행의 개수와 열의 개수 출력
 dim( mtcars )
 
-# 3. 이 데이터셋 열들의 자료형 출력 #########
-str( mtcars )
+# 3. 이 데이터셋 열들의 자료형 출력
+for( i in 1:ncol( mtcars ) ) {
+  cat( colnames( mtcars )[i], ":", class( mtcars[ , i ] ), "\n" )
+}
 
 # 4. 연비(mpg)가 가장 좋은 자동차 모델 출력
-
+subset( mtcars, mpg == max( mtcars[ , "mpg" ] ) )
 
 # 5. gear가 4인 자동차 모델 중 연비가 가장 낮은 모델 출력
+tmp <- subset( mtcars, gear == 4 )
+tmp <- subset( tmp, mpg == min( tmp[ , "mpg" ] ) )
+tmp
+
 # 6. Honda Civic의 연비(mpg)와 gear 수 출력
+mtcars[ "Honda Civic", c( "mpg", "gear" ) ]
+
 # 7. Pontiac Firebird 보다 연비가 좋은 자동차 모델 출력
+pf_mpg <- mtcars[ "Pontiac Firebird", "mpg" ]
+subset( mtcars, mpg > pf_mpg )
+
 # 8. 자동차 모델들의 평균 연비 출력
-# 9. gear의 수 종류 출력 ########
-factor( mtcars[ , "gear"] )
+apply( mtcars, 2, mean)[ "mpg" ]
+
+# 9. gear의 수 종류 출력
+unique( mtcars[ , "gear" ] )
 
 # 
 # 문4)
@@ -143,15 +155,14 @@ class( airquality )
 head( airquality )
 
 # 3. 기온(Temp)이 가장 높은 날은 언제인지 월(Month)과 일(Day) 출력
-
-
+subset( airquality, Temp == max( airquality[ , "Temp" ] ) )[ , c( "Month", "Day" ) ]
 
 # 4. 6월달에 발생한 가장 강한 바람(Wind)의 세기 출력
 max( subset( airquality, Month == 6 )[ , "Wind" ] )
 
 # 5. 7월 달의 평균 기온(Temp) 출력
-df_mon7 <- subset( airquality, Month == 7 )
-apply( df_mon7, 2, mean )[ "Temp" ]
+mon7 <- subset( airquality, Month == 7 )
+apply( mon7, 2, mean )[ "Temp" ]
 
 # 6. 오존(Ozone) 농도가 100을 넘는 날은 며칠이나 되는지 출력
 nrow( subset( airquality, Ozone > 100 ) )
@@ -161,7 +172,10 @@ nrow( subset( airquality, Ozone > 100 ) )
 # 1. R에서 제공하는 state.x77 데이터셋에서 수입(Income)이 5,000 이상인 주의 데이터에서
 # 수입(Income), 인구(Population), 면적(Area) 열의 값들만 추출하여 rich_state.csv에 저장
 st <- data.frame( state.x77 )
-st
-subset( st, Income >= 5000 )[ , c( "Income", "Population", "Area" )]
+st2 <- subset( st, Income >= 5000 )[ , c( "Income", "Population", "Area" )]
+setwd( "D:/workR" )
+write.csv( st2, "rich_state.csv", row.names = T, quote = F )
 
 # 2. 1.에서 만든 rich_state.csv파일을 읽어서 ds 변수에 저장한 후 ds 내용 출력
+ds <- read.csv( "rich_state.csv", header = T )
+ds
