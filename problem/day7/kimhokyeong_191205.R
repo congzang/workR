@@ -142,20 +142,21 @@ books <- data.frame( name = c( "Johns", "Venables", "Tierney", "Ripley", "Ripley
 # 
 # (1) surname과 name을 공통 열로 하여 authors와 books를 병합하여 출력하시오(두						   
 #                                                        데이터프레임에서 공통 열의 값이 일치하는 것들만 병합).
-inner_join( authors, books, by = c( "surname" = "name" ) )
-# merge( authors, books, by.x = "surname", by.y = "name" )
+# library( dplyr )
+# inner_join( authors, books, by = c( "surname" = "name" ) )
+merge( authors, books, by.x = "surname", by.y = "name" )
 
 # (2) surname과 name을 공통 열로 하여 authors와 books를 병합하여 출력하되
 # authors의 행들이 모두 표시되도록 하시오.
-left_join( authors, books, by = c( "surname" = "name" ) )
-# merge( authors, books, by.x = "surname", by.y = "name", all.x = TRUE )
+# left_join( authors, books, by = c( "surname" = "name" ) )
+merge( authors, books, by.x = "surname", by.y = "name", all.x = TRUE )
 
 # (3) surname과 name을 공통 열로 하여 authors와 books를 병합하여 출력하되 books
 # 의 행들은 모두 표시되도록 하시오.
-full_join( authors, books, by = c( "surname" = "name" ) )
-# merge( authors, books, by.x = "surname", by.y = "name", all = TRUE )
+# full_join( authors, books, by = c( "surname" = "name" ) )
+merge( authors, books, by.x = "surname", by.y = "name", all = TRUE )
 
 # (4) surname과 other.author를 공통 열로 하여 authors와 books를 병합하여 출력하
 # 시오.	# 
-inner_join( authors, books, by = c( "surname" = "other.author" ) )
-# merge( authors, books, by.x = "surname", by.y = "other.author" )
+# inner_join( authors, books, by = c( "surname" = "other.author" ) )
+merge( authors, books, by.x = "surname", by.y = "other.author" )
