@@ -10,8 +10,7 @@ head( mpg )
 View( mpg )
 
 # 산점도
-ggplot( data = mpg ) 
-  + geom_point( mapping = aes( x = displ, y = hwy ) ) # ggplot(data = 대상) + geom_*(함수) ex) geom_point:산점도
+ggplot( data = mpg ) + geom_point( mapping = aes( x = displ, y = hwy ) ) # ggplot(data = 대상) + geom_*(함수) ex) geom_point:산점도
 
 
 month <- c( 1, 2, 3, 4, 5, 6 )
