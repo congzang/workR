@@ -22,27 +22,6 @@ df
 year <- c( 2016.0, 2016.5 , 2017.0, 2017.5 , 2018.0, 2018.5, 2019.0 )
 
 colnames( df ) <- c( "지역", year )
-# 
-# class( df[ 1, ] )
-# year <- colnames( df )[ 2:ncol( df ) ]
-# 
-# str( df[ 1, 2:ncol( df ) ] )
-# 
-# colnames( df[ -1 ] )
-# 
-# year <- colnames( df[ -1 ] )
-# cnt <- as.vector( as.matrix( df[ 1, 2:ncol( df ) ] )[ 1, ] )
-# df.area <- data.frame( 년도 = year, 사업체수 = cnt )
-# 
-# gpl <- ggplot()
-# gpl <- gpl + geom_line( data = df.area, col = "red", mapping = aes( x = 년도, y = 사업체수, group = 1 ) )
-# 
-# year <- colnames( df[ -1 ] )
-# cnt <- as.vector( as.matrix( df[ 2, 2:ncol( df ) ] )[ 1, ] )
-# df.area <- data.frame( 년도 = year, 사업체수 = cnt )
-# gpl <- gpl + geom_line( data = df.area, col = "purple", mapping = aes( x = 년도, y = 사업체수, group = 1 ) )
-# 
-# gpl
 
 col <- c( "red", "blue", "yellow", "gray", "steelblue", 
           "black", "pink", "green", "orange", "maroon", 
@@ -63,9 +42,6 @@ for( i in 2:nrow( df ) ) {
 }
 
 gpl
-
-
-
 
 # 전국 제외
 for( i in 2:nrow( df ) ) {
