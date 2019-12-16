@@ -31,7 +31,7 @@ df <- df_o %>%
 
 
 df.filter <- df
-title <- "제주와 일부 타 지역 5개년(2014~2018) 평균 폐업률"
+title <- "제주와 일부 타 지역 평균 폐업률"
 
 ggplot( data = df.filter ) +
   geom_bar( stat = "identity", mapping = aes( x = 지역, y = 폐업률 ), fill = df.filter$막대색, width = 0.7 ) + 

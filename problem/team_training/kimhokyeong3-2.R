@@ -10,6 +10,8 @@ df_o <- excel_o
 
 str( df_o )
 
+
+
 # 컬럼이름만 바꿈
 area <- c( "소계", "제주" )
 
