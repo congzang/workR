@@ -1,0 +1,5 @@
+
+col2 <- list( 제주 = "#F14B69", 서울 = "darkblue", 경기 = "blue", 인천 = "yellow", 강원 = "gray", 대전 = "steelblue", 
+             충북 = "black", 충남 = "pink", 세종 = "green", 광주 = "orange", 전북 = "maroon", 
+             전남 = "skyblue", 대구 = "coral", 경북 = "brown", 부산 = "darkblue", 울산 = "darkviolet",
+             경남 = "aquamarine" )

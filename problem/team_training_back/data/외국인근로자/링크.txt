@@ -1,0 +1,7 @@
+http://kosis.kr/statisticsList/statisticsListIndex.do?menuId=M_01_01&vwcd=MT_ZTITLE&parmTabId=M_01_01&parentId=B.1;B1.2;B1_z01.3;#SelectStatsBoxDiv
+http://www.index.go.kr/potal/main/EachDtlPageDetail.do?idx_cd=1501
+http://kosis.kr/statisticsList/statisticsListIndex.do?menuId=M_01_01&vwcd=MT_ZTITLE&parmTabId=M_01_01&parentId=B.1;B1.2;B1_z02.3;B1_z02_101.4;B1_z02_101_30.5;#SelectStatsBoxDiv
+http://kosis.kr/search/search.do?query=%EC%99%B8%EA%B5%AD%EC%9D%B8%C2%A0%EA%B3%A0%EC%9A%A9
+
+http://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=3&ccfNo=1&cciNo=1&cnpClsNo=1
+https://eps.hrdkorea.or.kr/e9/user/employment/employment.do?method=employProcessCompany
