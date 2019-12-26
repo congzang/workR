@@ -1,8 +1,3 @@
-#
-# kimhokyeong2.R
-# - 총생산금액
-# 김호경 2019.12.21 / 2019.12.23
-#
 library( rJava )
 library( xlsx )
 library( tidyverse )

@@ -73,7 +73,6 @@ library( stringi )
 library( ggiraphExtra )
 library( kormaps2014 )
 library( moonBook2 )
-
 str( changeCode( areacode ) ) # kormaps2014 package의 changeCode()는
 
 str( changeCode( kormap1 ) )  # encoding을 cp949로 변환
@@ -101,6 +100,10 @@ ggChoropleth( korpop2, kormap2, fillvar = "남자_명" )
 ggChoropleth( korpop3, kormap3, fillvar= "주택_계_호" )
 
 # subarea 인수를 이용한 특정지역 표시 - Error
+areacode <- changeCode( areacode )
+# korpop3 <- changeCode( korpop3 )
+# kormap3 <- changeCode( kormap3 )
+
 ggChoropleth( korpop3, kormap3, fillvar= "총인구_명",
               subarea = c( "전라", "광주" ) )
 
@@ -110,8 +113,11 @@ ggChoropleth( korpop2, kormap2, fillvar="남자_명",
               interactive = TRUE )
 
 # Error
+# areacode <- changeCode( areacode )
+# korpop3 <- changeCode( korpop3 )
+# kormap3 <- changeCode( kormap3 )
+area2code()
 ggChoropleth( korpop3, kormap3, fillvar="남자_명",
-              interactive = TRUE,
               subarea = c( "전라","광주" ),
               tooltip = "행정구역별_읍면동" )
 

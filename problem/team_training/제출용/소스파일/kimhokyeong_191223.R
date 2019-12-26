@@ -140,6 +140,9 @@ ggplot() +
 ########################
 # 읍면동별 외국인 밀집 #
 ########################
+library( kormaps2014 )
+library( moonBook2 )
+
 excel_o <- read.xlsx( "읍면동별_세대_및_인구.xlsx", sheetIndex = 1, encoding = "UTF-8", startRow = 2 )
 df_o <- excel_o
 str( excel_o )
@@ -170,3 +173,4 @@ df_o$code <- df_code.jeju[ df_code.jeju$name == df_o$행정구역별_읍면동, 
 ggChoropleth( df_o, kormap3, fillvar= "외국인수", 
               title = "2011 제주 읍면동별 외국인수 단계구분도",
               subarea = c( "제주" ) )
+
